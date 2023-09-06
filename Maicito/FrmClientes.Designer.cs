@@ -29,6 +29,7 @@ namespace Maicito
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmClientes));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -52,21 +53,23 @@ namespace Maicito
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 507);
+            this.dataGridView1.Location = new System.Drawing.Point(61, 321);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1138, 270);
+            this.dataGridView1.Size = new System.Drawing.Size(769, 176);
             this.dataGridView1.TabIndex = 25;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(903, 428);
+            this.button4.Location = new System.Drawing.Point(707, 278);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(184, 60);
+            this.button4.Size = new System.Drawing.Size(123, 39);
             this.button4.TabIndex = 24;
             this.button4.Text = "LISTAR";
             this.button4.UseVisualStyleBackColor = true;
@@ -75,9 +78,10 @@ namespace Maicito
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(655, 428);
+            this.button3.Location = new System.Drawing.Point(491, 278);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(184, 60);
+            this.button3.Size = new System.Drawing.Size(123, 39);
             this.button3.TabIndex = 23;
             this.button3.Text = "EDITAR";
             this.button3.UseVisualStyleBackColor = true;
@@ -86,9 +90,10 @@ namespace Maicito
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(361, 428);
+            this.button2.Location = new System.Drawing.Point(266, 278);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(184, 60);
+            this.button2.Size = new System.Drawing.Size(123, 39);
             this.button2.TabIndex = 22;
             this.button2.Text = "GRABAR";
             this.button2.UseVisualStyleBackColor = true;
@@ -97,9 +102,10 @@ namespace Maicito
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(91, 428);
+            this.button1.Location = new System.Drawing.Point(61, 278);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(184, 60);
+            this.button1.Size = new System.Drawing.Size(123, 39);
             this.button1.TabIndex = 21;
             this.button1.Text = "NUEVO";
             this.button1.UseVisualStyleBackColor = true;
@@ -107,6 +113,7 @@ namespace Maicito
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.textBox4);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.textBox3);
@@ -115,103 +122,119 @@ namespace Maicito
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(16, 77);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.SpringGreen;
+            this.groupBox1.Location = new System.Drawing.Point(61, 52);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1153, 330);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(769, 214);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(64, 71);
+            this.textBox4.Location = new System.Drawing.Point(43, 46);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(973, 28);
+            this.textBox4.Size = new System.Drawing.Size(650, 24);
             this.textBox4.TabIndex = 14;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(60, 47);
+            this.label8.Location = new System.Drawing.Point(40, 31);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(42, 22);
+            this.label8.Size = new System.Drawing.Size(34, 18);
             this.label8.TabIndex = 13;
             this.label8.Text = "NIT";
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(64, 263);
+            this.textBox3.Location = new System.Drawing.Point(43, 171);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(973, 28);
+            this.textBox3.Size = new System.Drawing.Size(650, 24);
             this.textBox3.TabIndex = 7;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(60, 239);
+            this.label5.Location = new System.Drawing.Point(40, 155);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 22);
+            this.label5.Size = new System.Drawing.Size(80, 18);
             this.label5.TabIndex = 6;
             this.label5.Text = "Direccion";
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(64, 194);
+            this.textBox2.Location = new System.Drawing.Point(43, 126);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(973, 28);
+            this.textBox2.Size = new System.Drawing.Size(650, 24);
             this.textBox2.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(60, 170);
+            this.label3.Location = new System.Drawing.Point(40, 110);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 22);
+            this.label3.Size = new System.Drawing.Size(76, 18);
             this.label3.TabIndex = 2;
             this.label3.Text = "Apellidos";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(64, 131);
+            this.textBox1.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBox1.Location = new System.Drawing.Point(43, 85);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(973, 28);
+            this.textBox1.Size = new System.Drawing.Size(650, 24);
             this.textBox1.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(60, 107);
+            this.label2.Location = new System.Drawing.Point(40, 70);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 22);
+            this.label2.Size = new System.Drawing.Size(77, 18);
             this.label2.TabIndex = 0;
             this.label2.Text = "Nombres";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(477, 10);
+            this.label1.Location = new System.Drawing.Point(383, 6);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(239, 64);
+            this.label1.Size = new System.Drawing.Size(165, 44);
             this.label1.TabIndex = 19;
             this.label1.Text = "Clientes";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(1392, 387);
+            this.label9.Location = new System.Drawing.Point(928, 252);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(51, 20);
+            this.label9.Size = new System.Drawing.Size(35, 13);
             this.label9.TabIndex = 26;
             this.label9.Text = "label9";
             this.label9.Visible = false;
             // 
             // FrmClientes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1595, 732);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(913, 476);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button4);
@@ -220,6 +243,7 @@ namespace Maicito
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmClientes";
             this.Text = "FrmClientes";
             this.Load += new System.EventHandler(this.FrmClientes_Load);
