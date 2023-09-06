@@ -65,7 +65,7 @@ namespace Maicito
             using (conex = new SqlConnection(cadena))
             {
                 conex.Open();
-                sql = "Select * From Empleados";
+                sql = "SELECT Usuario.*, Empleados.CodigoEmpleado, Empleados.Nombre, Empleados.Apellidos FROM Usuario INNER JOIN Empleados ON Usuario.IDEmpleado = Empleados.IDEmpleado;";
                 comando = new SqlCommand(sql, conex);
                 adaptador = new SqlDataAdapter(comando);
                 adaptador.Fill(datos);
@@ -90,18 +90,18 @@ namespace Maicito
                     conex.Open();
                     sql = "Update Empleados set CodigoEmpleado=@cui, Telefono=@dir,Nombre=@nom, Apellidos=@ape Where IdEmpleado=" + int.Parse(label9.Text);
                     comando = new SqlCommand(sql, conex);
-                    param = new SqlParameter("@nom", textBox1.Text);
+                    param = new SqlParameter("@nom", textBox5.Text);
                     comando.Parameters.Add(param);
-                    param = new SqlParameter("@ape", textBox2.Text);
+                    param = new SqlParameter("@ape", textBox7.Text);
                     comando.Parameters.Add(param);
-                    param = new SqlParameter("@dir", int.Parse(textBox3.Text));
+                    param = new SqlParameter("@dir", comboBox1.Text);
                     comando.Parameters.Add(param);
-                    param = new SqlParameter("@cui", textBox4.Text);
+                    param = new SqlParameter("@cui", textBox6.Text);
                     comando.Parameters.Add(param);
                     comando.ExecuteNonQuery();
                     respuesta = "Se ha editado el registro";
                     limpiar();
-                    groupBox1.Enabled = false;
+                    groupBox2.Enabled = false;
                 }
             }
             catch (Exception error)
@@ -125,13 +125,13 @@ namespace Maicito
                     conex.Open();
                     sql = "Insert Into Empleados (CodigoEmpleado, Telefono ,Nombre, Apellidos, Disponible) Values(@cui, @dir,@nom, @ape,@disp)";
                     comando = new SqlCommand(sql, conex);
-                    param = new SqlParameter("@nom", textBox1.Text);
+                    param = new SqlParameter("@nom", textBox5.Text);
                     comando.Parameters.Add(param);
-                    param = new SqlParameter("@ape", textBox2.Text);
+                    param = new SqlParameter("@ape", textBox7.Text);
                     comando.Parameters.Add(param);
-                    param = new SqlParameter("@dir", int.Parse(textBox3.Text));
+                    param = new SqlParameter("@dir", comboBox1.Text);
                     comando.Parameters.Add(param);
-                    param = new SqlParameter("@cui", textBox4.Text);
+                    param = new SqlParameter("@cui", textBox6.Text);
                     comando.Parameters.Add(param);
                     param = new SqlParameter("@disp", 1);
                     comando.Parameters.Add(param);
@@ -141,7 +141,7 @@ namespace Maicito
                     button1.Enabled = true;
                     limpiar();
                     button2.Enabled = false;
-                    groupBox1.Enabled = false;
+                    groupBox2.Enabled = false;
                 }
             }
             catch (Exception error)
@@ -154,7 +154,7 @@ namespace Maicito
 
         private void button1_Click(object sender, EventArgs e)
         {
-            groupBox1.Enabled = true;
+            groupBox2.Enabled = true;
             button1.Enabled = false;
             button2.Enabled = true;
             limpiar();
