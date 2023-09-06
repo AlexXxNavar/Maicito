@@ -16,5 +16,11 @@ namespace Maicito
         {
             InitializeComponent();
         }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            FrmClientes form = new FrmClientes();
+            form.Show();
+        }
     }
 }

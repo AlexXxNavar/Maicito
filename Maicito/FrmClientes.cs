@@ -13,6 +13,7 @@ namespace Maicito
 {
     public partial class FrmClientes : Form
     {
+        int aux = 0;
         public FrmClientes()
         {
             InitializeComponent();
@@ -32,29 +33,23 @@ namespace Maicito
             SqlCommand comando;
             SqlParameter param;
             string sql, cadena, respuesta;
-            cadena = "Server=LAPTOP-KVL566MP; Database=Parqueo; User Id=sa; Password=B654681K;";
+            cadena = "Server=LAPTOP-KVL566MP; Database=Maicito; User Id=sa; Password=database;";
             try
             {
                 using (conex = new SqlConnection(cadena))
                 {
                     conex.Open();
-                    sql = "Insert Into Piloto (CUIP, TipoSangre,TipoLicencia,FechaNacimiento, Direccion,Nombres, Apellidos, Plaza) Values(@cui,@tip1,@tip2,@fn, @dir,@nom, @ape,@pla)";
+                    sql = "Insert Into Cliente (NIT, Direccion,Nombre, Apellidos, Disponible) Values(@cui, @dir,@nom, @ape,@disp)";
                     comando = new SqlCommand(sql, conex);
                     param = new SqlParameter("@nom", textBox1.Text);
                     comando.Parameters.Add(param);
                     param = new SqlParameter("@ape", textBox2.Text);
                     comando.Parameters.Add(param);
-                    param = new SqlParameter("@fn", dateTimePicker1.Value);
-                    comando.Parameters.Add(param);
                     param = new SqlParameter("@dir", textBox3.Text);
                     comando.Parameters.Add(param);
                     param = new SqlParameter("@cui", textBox4.Text);
                     comando.Parameters.Add(param);
-                    param = new SqlParameter("@tip1", comboBox1.Text);
-                    comando.Parameters.Add(param);
-                    param = new SqlParameter("@tip2", comboBox2.Text);
-                    comando.Parameters.Add(param);
-                    param = new SqlParameter("@pla", 1);
+                    param = new SqlParameter("@disp", 1);
                     comando.Parameters.Add(param);
                     comando.ExecuteNonQuery();
                     respuesta = "Se ha creado un nuevo registro";
@@ -79,29 +74,21 @@ namespace Maicito
             SqlCommand comando;
             SqlParameter param;
             string sql, cadena, respuesta;
-            cadena = "Server=LAPTOP-KVL566MP; Database=Parqueo; User Id=sa; Password=B654681K;";
+            cadena = "Server=LAPTOP-KVL566MP; Database=Maicito; User Id=sa; Password=database;";
             try
             {
                 using (conex = new SqlConnection(cadena))
                 {
                     conex.Open();
-                    sql = "Update Piloto set CUIP=@cui,TipoSangre=@tip1,TipoLicencia=@tip2,FechaNacimiento=@fn, Direccion=@dir,Nombres=@nom, Apellidos=@ape, Plaza=@pla Where IdPiloto=" + int.Parse(label9.Text);
+                    sql = "Update Cliente set NIT=@cui, Direccion=@dir,Nombre=@nom, Apellidos=@ape Where IdCliente=" + int.Parse(label9.Text);
                     comando = new SqlCommand(sql, conex);
                     param = new SqlParameter("@nom", textBox1.Text);
                     comando.Parameters.Add(param);
                     param = new SqlParameter("@ape", textBox2.Text);
                     comando.Parameters.Add(param);
-                    param = new SqlParameter("@fn", dateTimePicker1.Value);
-                    comando.Parameters.Add(param);
                     param = new SqlParameter("@dir", textBox3.Text);
                     comando.Parameters.Add(param);
                     param = new SqlParameter("@cui", textBox4.Text);
-                    comando.Parameters.Add(param);
-                    param = new SqlParameter("@tip1", comboBox1.Text);
-                    comando.Parameters.Add(param);
-                    param = new SqlParameter("@tip2", comboBox2.Text);
-                    comando.Parameters.Add(param);
-                    param = new SqlParameter("@pla", aux);
                     comando.Parameters.Add(param);
                     comando.ExecuteNonQuery();
                     respuesta = "Se ha editado el registro";
@@ -123,11 +110,11 @@ namespace Maicito
             SqlDataAdapter adaptador;
             DataTable datos = new DataTable();
             string sql, cadena;
-            cadena = "Server=LAPTOP-KVL566MP; Database=Parqueo; User Id=sa; Password=B654681K;";
+            cadena = "Server=LAPTOP-KVL566MP; Database=Maicito; User Id=sa; Password=database;";
             using (conex = new SqlConnection(cadena))
             {
                 conex.Open();
-                sql = "Select * From Piloto";
+                sql = "Select * From Cliente";
                 comando = new SqlCommand(sql, conex);
                 adaptador = new SqlDataAdapter(comando);
                 adaptador.Fill(datos);
@@ -142,16 +129,13 @@ namespace Maicito
         {
             if (e.RowIndex >= 0 && e.RowIndex < dataGridView1.Rows.Count - 1)
             {
-                aux = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString());
+               
 
                 textBox4.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-                textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
-                textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
-                textBox3.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
-                comboBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-                comboBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                textBox3.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
                 label9.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-                dateTimePicker1.Value = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString());
                 button3.Enabled = true;
                 button2.Enabled = false;
                 button1.Enabled = true;
@@ -173,9 +157,6 @@ namespace Maicito
             textBox2.Text = "";
             textBox3.Text = "";
             textBox4.Text = "";
-            comboBox1.Text = "";
-            comboBox2.Text = "";
-            dateTimePicker1.Value = DateTime.Now;
             aux = 0;
         }
     }
