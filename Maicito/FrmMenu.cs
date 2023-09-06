@@ -22,5 +22,17 @@ namespace Maicito
             FrmClientes form = new FrmClientes();
             form.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmEmpleados form = new FrmEmpleados();
+            form.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FrmUsuario form = new FrmUsuario();
+            form.Show();
+        }
     }
 }
